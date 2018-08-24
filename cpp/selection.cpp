@@ -12,10 +12,10 @@ std::vector<int> selection_sort(std::vector<int> &A)
         }
         std::cout<<"\nSorted list : \n";
 
-        for(int i=0;i<A.size()-2;i++)
+        for(int i=0;i<A.size()-1;i++)
         {
 		int imin=i;
-		for(int j=i+1;j<A.size()-1;j++)
+		for(int j=i+1;j<A.size();j++)
 		{
 			if(A[j]<A[imin])
 				imin=j;
