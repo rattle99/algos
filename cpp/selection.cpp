@@ -3,7 +3,7 @@
 #include <iostream>
 #include <vector>
 
-std::vector<int> selection_sort(std::vector<int> A)
+std::vector<int> selection_sort(std::vector<int> &A)
 {
         std::cout<<"Current list : \n";
         for(int i=0;i<A.size();i++)
