@@ -1,4 +1,4 @@
-/*Program for bubble sort implementation in C++. */
+/*Program for insertion sort implementation in C++. */
 
 #include <iostream>
 #include <vector>
@@ -43,4 +43,3 @@ int main()
         }
         return 0;
 }
-
