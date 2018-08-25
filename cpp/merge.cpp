@@ -25,7 +25,7 @@ void mergeHalves(std::vector<int> &A, int leftStart, int mid, int rightEnd)
                 temp[k++]  = A[j++];
         }
 	
-	for(int m=0;i<temp.size();i++)
+	for(int m=leftStart;i<=rightEnd;i++)
         {
                 A[m]=temp[m];
         }
