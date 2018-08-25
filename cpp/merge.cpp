@@ -5,40 +5,48 @@
 
 void mergeHalves(std::vector<int> &A, int leftStart, int mid, int rightEnd)
 {
-        std::vector<int> temp;
-        int i=leftStart, k=i, j=mid+1;
-        while (i <= mid && j <= rightEnd)
+        int n1=mid-leftStart+1, n2=rightEnd-mid;
+        std::vector<int> left, right;
+        for (int i = 0; i < n1; i++)
+	{
+            left.push_back(A[leftStart+i]);
+        }
+        for (int i = 0; i < n2; i++)
+	{
+            right.push_back(A[mid+1+i]);
+        }
+
+        int i=0, k=leftStart, j=0;
+
+        while (i < n1 && j <n2)
         {
-                if(A[i] < A[j])
-                	temp.insert(temp.begin() + k++, A[i++]);
+                if(left[i] <= right[j])
+                	A[k++] = left[i++];
 
                 else
-                	temp.insert(temp.begin() + k++, A[j++]);
+                	A[k++] = right[j++];
         }
 
-        while(i <= mid)
+        while(i <n1)
         {
-                temp.insert(temp.begin() + k++, A[i++]);
+                A[k++] = left[i++];
         }
-        while(j <= rightEnd)
+        while(j <n2)
         {
-                temp.insert(temp.begin() + k++, A[j++]);
+                A[k++]  = right[j++];
         }
-	
-	for(int m=leftStart;i<=rightEnd;i++)
-        {
-               A.insert(A.begin() + m, temp[m]);
-        }
+
 }
 
 void merge_sort(std::vector<int> &A, int leftStart, int rightEnd)
-{
+
+{/*
         std::cout<<"Current list : \n";
         for(int i=0;i<A.size();i++)
         {
                 std::cout<<A[i]<<" ";
         }
-
+*/
         if(leftStart>=rightEnd)
                 return;
 
@@ -47,24 +55,23 @@ void merge_sort(std::vector<int> &A, int leftStart, int rightEnd)
         merge_sort(A,mid+1,rightEnd);
 
         mergeHalves(A, leftStart, mid, rightEnd);
-
-
+/*
         std::cout<<"\nSorted list : \n";
         for(int i=0;i<A.size();i++)
         {
                 std::cout<<A[i]<<" ";
         }
-        return; 
+        return; */
 }
 
 int main()
 {
         std::cout<<"\nTest\n";
-        std::vector<int> arr={10,2,23,-4,235,56,2,6,5,5,5,23,-4,346,-56,-54};
+        std::vector<int> arr={10,2,23,-4,235,56,2,6,5,81,5,23,-4,346,-56,-54};
 
         merge_sort(arr,0,arr.size()-1);
-
         std::cout<<"\n\n\n";
+
         for(int i=0;i<arr.size();i++)
         {
                 std::cout<<arr[i]<<" ";
