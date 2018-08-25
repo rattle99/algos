@@ -10,35 +10,35 @@ void mergeHalves(std::vector<int> &A, int leftStart, int mid, int rightEnd)
         while (i <= mid && j <= rightEnd)
         {
                 if(A[i] < A[j])
-                	temp[k++] = A[i++];
+                	temp.insert(temp.begin() + k++, A[i++]);
 
                 else
-                	temp[k++] = A[j++];
+                	temp.insert(temp.begin() + k++, A[j++]);
         }
 
         while(i <= mid)
         {
-                temp[k++] = A[i++];
+                temp.insert(temp.begin() + k++, A[i++]);
         }
         while(j <= rightEnd)
         {
-                temp[k++]  = A[j++];
+                temp.insert(temp.begin() + k++, A[j++]);
         }
 	
 	for(int m=leftStart;i<=rightEnd;i++)
         {
-               A[m]=temp[m];
+               A.insert(A.begin() + m, temp[m]);
         }
 }
 
 void merge_sort(std::vector<int> &A, int leftStart, int rightEnd)
-{/*
+{
         std::cout<<"Current list : \n";
         for(int i=0;i<A.size();i++)
         {
                 std::cout<<A[i]<<" ";
         }
-*/
+
         if(leftStart>=rightEnd)
                 return;
 
@@ -48,13 +48,13 @@ void merge_sort(std::vector<int> &A, int leftStart, int rightEnd)
 
         mergeHalves(A, leftStart, mid, rightEnd);
 
-/*
+
         std::cout<<"\nSorted list : \n";
         for(int i=0;i<A.size();i++)
         {
                 std::cout<<A[i]<<" ";
         }
-        return; */
+        return; 
 }
 
 int main()
