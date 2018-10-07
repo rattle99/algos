@@ -17,8 +17,7 @@ class stack {
 };
 
 void stack::push(int a) {
-	node *temp;
-	temp=new node;
+	node *temp=new node;
 	temp->data=a;
 	temp->next=NULL;
 	if(top!=NULL) {
