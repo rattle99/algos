@@ -62,7 +62,7 @@ Reference: Hackerearth, Geeksforgeeks
 
 ---
 
-### Selection Sort:
+### 5. Selection Sort:
 
 The selection sort algorithm sorts an array by repeatedly finding the minimum element (considering ascending order) from unsorted part and putting it at the beginning. The algorithm maintains two subarrays in a given array.
 
@@ -74,5 +74,29 @@ In every iteration of selection sort, the minimum element (considering ascending
 **Example:**
 
 ![alt text](https://he-s3.s3.amazonaws.com/media/uploads/2888f5b.png)
+
+### Stacks and Queues
+
+## Stack
+Stacks are dynamic data structures that follow the Last In First Out (LIFO) principle. The last item to be inserted into a stack is the first one to be deleted from it.
+
+Inserting and deleting elements
+
+Stacks have restrictions on the insertion and deletion of elements. Elements can be inserted or deleted only from one end of the stack i.e. from the top. The element at the top is called the top element. The operations of inserting and deleting elements are called push() and pop() respectively.
+
+When the top element of a stack is deleted, if the stack remains non-empty, then the element just below the previous top element becomes the new top element of the stack.
+
+For example, in the stack of trays, if you take the tray on the top and do not replace it, then the second tray automatically becomes the top element (tray) of that stack.
+
+![alt text](https://he-s3.s3.amazonaws.com/media/uploads/9a74c87.png)
+
+## Queue
+
+Enqueue and Dequeue.
+Enqueue means to add to queue.
+Dequeue means to remove from queue.
+
+![alt text](https://he-s3.s3.amazonaws.com/media/uploads/cf1e1c1.png)
+
 
 Reference: Hackerearth, Geeksforgeeks
